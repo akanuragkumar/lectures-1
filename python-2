@@ -1,0 +1,130 @@
+
+Python 102
+Topics to be covered:
+Built-in Data Types: list, tuple, dict
+Iteration: for-loop and while-loop
+Object oriented Programming: Classes and objects
+Built-in Data Types
+Performace Efficient
+Consistent across all platforms
+Flexibilty
+Fun
+List
+Array, Mutable Sequence of items
+In [ ]:
+names = [] # list of names
+# Indexing
+# insert, append, extend and +
+# pop
+# count
+# sort
+# List comprehension
+Tuple
+Record, Structure
+Immutable data structure
+In [ ]:
+record = ('Kshitij', 21, 'IIT KGP', 'Mathematics and Computing')
+print(record[0])
+
+record[-1] = 'MnC'  # cannot change data
+Dictionary
+Mapping, Hash Table
+In [1]:
+state_capitals = {}
+# Defining a dictionary
+# keys(), values(), items()
+# has_key
+# update
+# Dictionary Comprehension
+# in operator
+Q. Six is a Mob
+Create a list with at least 6 names inside it. Write an if/else test case to test the following: If there are more than 5 people, a message is printed about there being a mob in the room.
+If there are 3-5 people, a message is printed about the room being crowded.
+If there are 1 or 2 people, a message is printed about the room not being crowded.
+If there are no people in the room, a message is printed about the room being empty.
+Iteration
+for loop
+In [ ]:
+for i in range(10): # range built-in
+    print(i)
+
+for i in range(1, 11, 2):
+    print(i)
+In [ ]:
+names = []
+
+# Method 01
+for i in range(len(names)): # for(i=0; i<len; i++)
+    print(names[i])
+
+# The Python way
+while loop
+In [ ]:
+name = 1
+while name:
+    name = input('Enter your name:')
+    print('Entered name =', name)
+break, pass and continue
+Q. Fibonacci Numbers
+Take a number as input from the user and write a function to compute the nth number in the Fibonacci Sequence.
+Classes
+In [ ]:
+class Point(object): # Class Definition
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __repr__(self):
+        return "Point(x={}, y={})".format(self.x, self.y)
+    
+p = Point(3, 4) # Object/Instance
+print(p)
+print('p.x =', p.x)
+print('p.y =', p.y)
+How to add perform vector addition of points ?
+How to find the distance between two points ?
+In [ ]:
+class Point(object): # Class Definition
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __repr__(self):
+        return "Point(x={}, y={})".format(self.x, self.y)
+    
+    def __add__(self, other):
+        return Point(self.x + other.x, self.y + other.y)
+
+p1, p2 = Point(3, 4), Point(1, 2)
+print('p1 =', p1)
+print('p2 =', p2)
+p3 = p1 + p2
+print('p3 =', p3)
+In [ ]:
+import math
+
+class Point(object): # Class Definition
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __repr__(self):
+        return "Point(x={}, y={})".format(self.x, self.y)
+    
+    def __add__(self, other):
+        return Point(self.x + other.x, self.y + other.y)
+
+    def distance(self, other):
+        d = math.sqrt((self.x - other.x)**2 + (self.y - other.y)**2)
+        return d
+
+p1, p2 = Point(3, 4), Point(1, 2)
+print('p1 =', p1)
+print('p2 =', p2)
+
+distance_between_p1_p2 = p1.distance(p2)
+print('Distance between p1 and p2 =', distance_between_p1_p2)
+
+distance_between_p2_p1 = p2.distance(p1)
+print('Distance between p2 and p1 =', distance_between_p2_p1)
+Q. Implement a class to abstract Rational numbers
