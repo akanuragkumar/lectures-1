@@ -1,0 +1,201 @@
+
+Python 101
+Presented by:
+Gunjan singh | Gopika kini
+Organized by:
+Your friendly neighbourhood,
+NISB
+AKA: How we would have liked to get started with Python!
+What are we going to learn today ?
+How to program in Python language?
+What is the Python language and why is there a buzz about it?
+Topics covered in today's class:
+- Using Python Interactive shell (REPL)
+- Writing Python Scripts
+- Fundamental knowledge about the basic types in Python
+- Defining Functions and calling them
+
+By the end of the session, I would like everyone to be comfortable with these concepts as they are the basis of future topics.
+How to Write and Run Python Code
+There are two ways to run Python code:
+1. interactive mode
+2. script mode
+Interactive Mode
+In interactive mode, you type Python code and the interpreter displays the result. This is the Python REPL (Read-Eval-Print Loop).
+In [1]:
+print('Hello, World! This is my first line of Python')
+Hello, World! This is my first line of Python
+Script Mode
+In script mode, you store the code in a file that ends with ".py".
+Copy the above line of code in a file called hello_world.py. To execute the code in the file, you would type $ python first_program.py in a command window.
+You should save your code as a script if you are writing anything more than a few lines.
+Types and Variables
+What is a type ?
+Something that stores your data as a value.
+Fundamentally, there are only 2 types of types(aka data structures) in Python:
+- Mutable: which can be updated after their creation | Ex: list, dict, set
+- Immutable: which cannot be modified after their creation | Ex: int, float, bool, string, tuple
+
+What is a variable ?
+An entity that refers to a value stored in memory.
+Convention for naming variables
+In [2]:
+int1 = 5
+int2 = 4
+print(int1 + int2)
+print(int1 - int2)
+print(int1 * int2)
+print(int1 / int2)
+print(int1 ** int2)
+print(int1 % int2)
+9
+1
+20
+1.25
+625
+1
+In [3]:
+float1, float2 = 3.14, 2.7
+print(float1 - float2)
+0.43999999999999995
+In [4]:
+print(5/2)
+print(5.0/2)
+print(5//2)
+2.5
+2.5
+2
+In [5]:
+flag = True
+print(flag)
+True
+In [6]:
+name = 'Kshitij' # "name" is a variable which stores a value of type "string"
+print(name)
+Kshitij
+In [7]:
+type(7)
+Out[7]:
+int
+Q. Compute the volume of a sphere of radius 7m. Hint: Use pi = 22/7
+In [8]:
+volume = (4/3)*(22/7)*(7**3)
+print(volume)
+1437.333333333333
+What is a program?
+A program is a sequence of instructions that specifies how to perform a computation.
+Examples of what a program might do:
+Check whether a number is odd or even
+Print Fibonacci numbers
+Help you make the world a better place
+And pretty much anything!
+What makes up a program?
+A few basic instructions appear in just about every language:
+input: Get data from the keyboard, a file, or some other device.
+output: Display data on the screen or send data to a file or other device.
+math: Perform basic mathematical operations like addition and multiplication.
+conditional execution: Check for certain conditions and execute the appropriate code.
+repetition: Perform some action repeatedly, usually with some variation.
+Taking Input from User
+There are only 2 ways to fetch data into your program
+Prompting user to enter it
+Reading data from an existing file/database
+In [9]:
+name = input('Enter your name:')
+print(name)
+Enter your name:Gopika
+Gopika
+Conditionals
+Control flow based on conditions
+In [10]:
+age = 9
+
+if age <= 19: # if statement
+    # Notice the indentation
+    message = 'Yay! You are a teenager.' 
+    print(message)
+Yay! You are a teenager.
+In [11]:
+age = 21
+
+if age <= 19 and age > 12: # if statement with two conditions
+    message = 'Yay! You are a teenager.' 
+    print(message)
+In [12]:
+age = 10
+
+if age <= 19 and age > 12: # if-else statement
+    message = 'Yay! You are a teenager. :)' 
+    print(message)
+else:
+    message = 'Alas! You are not a teenager. :('
+    print(message)
+Alas! You are not a teenager. :(
+In [13]:
+age = 10
+
+if age <= 19 and age > 12: # if-elif-else statement
+    message = 'Yay! You are a teenager. :)' 
+    print(message)
+elif age < 13:
+    message = 'Be prepared! You are about to be a teenager. :D'
+    print(message)
+else:
+    message = 'Alas! You are not a teenager. :('
+    print(message)
+Be prepared! You are about to be a teenager. :D
+In [14]:
+if True:
+    print('This conditional is always True.')
+
+if not False:
+    print('This conditional is always not False.')
+This conditional is always True.
+This conditional is always not False.
+In [15]:
+if 1:
+    print('1 is True')
+else:
+    print('1 is False')
+1 is True
+In [16]:
+if 0:
+    print('0 is True')
+else:
+    print('0 is False')
+0 is False
+Functions
+In [17]:
+def function_name(parameter1, parameter2):
+    # Perform some operations on the parameters
+    # return some value as a result of the computation
+    pass
+
+argument1 = 'some value'
+argument2 = 'another value'
+return_value = function_name(argument1, argument2)
+In [18]:
+def square(number):
+    square_number = number*number
+    return square_number
+
+square_5 = square(5)
+print('Square of 5:', square_5)
+Square of 5: 25
+In [19]:
+def is_odd(number):
+    mod = number % 2
+    if mod == 1:
+        return True
+    else:
+        return False
+
+odd_3 = is_odd(3)
+odd_4 = is_odd(4)
+
+print('3 is odd:', odd_3)
+print('4 is odd:', odd_4)
+3 is odd: True
+4 is odd: False
+Q. Write a function to ask the user for his/her name and print a greeting "Hello, {name}"
+In [ ]:
